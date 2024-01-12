@@ -114,6 +114,7 @@ wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/namydeveloper/MB2VPS
 wget -q -O /usr/bin/menu-webmin "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/menu/menu-webmin.sh"
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/ssh/xp.sh"
 wget -q -O /usr/bin/update "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/update.sh"
+wget -q -O /usr/bin/update "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/udp-custom.sh"
 wget -q -O /usr/bin/add-host "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/ssh/add-host.sh"
 wget -q -O /usr/bin/certv2ray "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/xray/certv2ray.sh"
 wget -q -O /usr/bin/menu-set "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/menu/menu-set.sh"
@@ -186,6 +187,7 @@ chmod +x /usr/bin/cek-vless
 chmod +x /usr/bin/renew-vless
 chmod +x /usr/bin/trialvless
 chmod +x /usr/bin/menu-trial
+chmod +x /usr/bin/udp-custom
 clear
 echo -e ""
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
