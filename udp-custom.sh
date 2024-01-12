@@ -1,61 +1,113 @@
 #!/bin/bash
 
-cd
+# Run as root
+[[ "$(whoami)" != "root" ]] && {
+    echo -e "\033[1;33m[\033[1;31mErro\033[1;33m] \033[1;37m- \033[1;33myou need to run as root\033[0m"
+    rm /home/ubuntu/install.sh &>/dev/null
+    exit 0
+}
+
+#=== setup ===
+cd 
 rm -rf /root/udp
 mkdir -p /root/udp
+rm -rf /etc/UDPCustom
+mkdir -p /etc/UDPCustom
+sudo touch /etc/UDPCustom/udp-custom
+udp_dir='/etc/UDPCustom'
+udp_file='/etc/UDPCustom/udp-custom'
 
-# change to time GMT+7
-echo "change to time GMT+7"
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
-# install udp-custom
-echo downloading udp-custom
-wget -q --show-progress --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1ixz82G_ruRBnEEp4vLPNF2KZ1k8UfrkV' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1ixz82G_ruRBnEEp4vLPNF2KZ1k8UfrkV" -O /root/udp/udp-custom && rm -rf /tmp/cookies.txt
-chmod +x /root/udp/udp-custom
+source <(curl -sSL 'https://raw.githubusercontent.com/mahpud896/UDP-Custom/main/module/module')
 
-echo downloading default config
-wget -q --show-progress --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1klXTiKGUd2Cs5cBnH3eK2Q1w50Yx3jbf' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1klXTiKGUd2Cs5cBnH3eK2Q1w50Yx3jbf" -O /root/udp/config.json && rm -rf /tmp/cookies.txt
-chmod 644 /root/udp/config.json
+time_reboot() {
+  print_center -ama "${a92:-System/Server Reboot In} $1 ${a93:-Seconds}"
+  REBOOT_TIMEOUT="$1"
 
-if [ -z "$1" ]; then
-cat <<EOF > /etc/systemd/system/udp-custom.service
-[Unit]
-Description=UDP Custom by ePro Dev. Team
+  while [ $REBOOT_TIMEOUT -gt 0 ]; do
+    print_center -ne "-$REBOOT_TIMEOUT-\r"
+    sleep 1
+    : $((REBOOT_TIMEOUT--))
+  done
+  rm /home/ubuntu/install.sh &>/dev/null
+  rm /root/install.sh &>/dev/null
+  echo -e "\033[01;31m\033[1;33m More Updates, Follow Us On \033[1;31m(\033[1;36mTelegram\033[1;31m): \033[1;37m@Namydev\033[0m"
+  reboot
+}
 
-[Service]
-User=root
-Type=simple
-ExecStart=/root/udp/udp-custom server
-WorkingDirectory=/root/udp/
-Restart=always
-RestartSec=2s
-
-[Install]
-WantedBy=default.target
-EOF
+# Check Ubuntu version
+if [ "$(lsb_release -rs)" = "8*|9*|10*|11*|16.04*|18.04*" ]; then
+  clear
+  print_center -ama -e "\e[1m\e[31m=====================================================\e[0m"
+  print_center -ama -e "\e[1m\e[33m${a94:-this script is not compatible with your operating system}\e[0m"
+  print_center -ama -e "\e[1m\e[33m ${a95:-Use Ubuntu 20 or higher}\e[0m"
+  print_center -ama -e "\e[1m\e[31m=====================================================\e[0m"
+  rm /home/ubuntu/install.sh
+  exit 1
 else
-cat <<EOF > /etc/systemd/system/udp-custom.service
-[Unit]
-Description=UDP Custom by ePro Dev. Team
+  clear
+  echo ""
+  print_center -ama "A Compatible OS/Environment Found"
+  print_center -ama " ⇢ Installation begins...! <"
+  sleep 3
 
-[Service]
-User=root
-Type=simple
-ExecStart=/root/udp/udp-custom server -exclude $1
-WorkingDirectory=/root/udp/
-Restart=always
-RestartSec=2s
+   # change to time GMT+7
+  echo "change to time GMT+7"
+  ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+  sleep 3
+  # [+clean up+]
+  rm -rf $udp_file &>/dev/null
+  rm -rf /etc/UDPCustom/udp-custom &>/dev/null
+  rm -rf /etc/UDPCustom/module &>/dev/null
+  systemctl stop udp-custom &>/dev/null
 
-[Install]
-WantedBy=default.target
-EOF
+
+ # [+get files ⇣⇣⇣+]
+  source <(curl -sSL 'https://raw.githubusercontent.com/mahpud896/UDP-Custom/main/module/module') &>/dev/null
+  wget -O /etc/UDPCustom/module 'https://raw.githubusercontent.com/mahpud896/UDP-Custom/main/module/module' &>/dev/null
+  chmod +x /etc/UDPCustom/module
+
+  wget "https://raw.githubusercontent.com/mahpud896/UDP-Custom/main/bin/udp-custom-linux-amd64" -O /root/udp/udp-custom &>/dev/null
+  # wget "https://raw.githubusercontent.com/mahpud896/UDP-Custom/main/bin/udp-request-linux-amd64" -O /usr/bin/udp-request &>/dev/null
+  chmod +x /root/udp/udp-custom
+  # chmod +x /usr/bin/udp-request
+
+  # [+service+]
+
+  wget -O /etc/udp-custom.service 'https://raw.githubusercontent.com/mahpud896/UDP-Custom/main/config/udp-custom.service'
+  
+ 
+  mv /etc/udp-custom.service /etc/systemd/system
+
+ 
+  chmod 640 /etc/systemd/system/udp-custom.service
+  
+  systemctl daemon-reload &>/dev/null
+  systemctl enable udp-custom &>/dev/null
+  systemctl start udp-custom &>/dev/null
+
+  # [+config+]
+  wget "https://raw.githubusercontent.com/mahpud896/UDP-Custom/main/config/config.json" -O /root/udp/config.json &>/dev/null
+  chmod +x /root/udp/config.json
+
+  # [+menu+]
+  wget -O /usr/bin/udp 'https://raw.githubusercontent.com/mahpud896/UDP-Custom/main/module/udp' 
+  chmod +x /usr/bin/udp
+  ufw disable &>/dev/null
+  sudo apt-get remove --purge ufw firewalld -y
+  apt remove netfilter-persistent -y
+  clear
+  echo ""
+  echo ""
+  print_center -ama "${a103:-setting up, please wait...}"
+  sleep 3
+  title "${a102:-Installation Successful}"
+  print_center -ama "${a103:-  To show menu type: \nudp\n}"
+  msg -bar
+  
 fi
 
-echo start service udp-custom
-systemctl start udp-custom &>/dev/null
 
-echo enable service udp-custom
-systemctl enable udp-custom &>/dev/null
 
-echo reboot
-reboot
+ 
+ 
