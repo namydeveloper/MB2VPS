@@ -199,17 +199,17 @@ resv2r="${green}ON${NC}"
 else
 resv2r="${red}OFF${NC}"
 fi
-v2r=$(service udp status | grep active | cut -d ' ' $stat)
+udp=$(service udp status | grep active | cut -d ' ' $stat)
 if [ "$v2r" = "active" ]; then
 resudp="${green}ON${NC}"
 else
 resudp="${red}OFF${NC}"
 fi
-v2r=$(service hysteria status | grep active | cut -d ' ' $stat)
+hysteria=$(service hysteria status | grep active | cut -d ' ' $stat)
 if [ "$v2r" = "active" ]; then
 reshysteria="${green}ON${NC}"
 else
-reshsteria="${red}OFF${NC}"
+reshysteria="${red}OFF${NC}"
 fi
 function addhost(){
 clear
