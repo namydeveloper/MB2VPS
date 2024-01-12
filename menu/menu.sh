@@ -314,7 +314,7 @@ case $opt in
 7) clear ; menu-backup ;;
 8) clear ; add-host ;;
 9) clear ; running ;;
-10) clear ; udpcustom ;;
+10) clear ; udp-custom ;;
 11) clear ; xolpanel ;;
 12) clear ; bw ;;
 13) clear ; menu-theme ;;
