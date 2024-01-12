@@ -69,7 +69,7 @@ let tra=$trx/2
 ssx=$(grep -c -E "^## " "/etc/xray/config.json")
 let ssa=$ssx/2
 
-UDPX="wget https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/udp-custom.sh"
+UDPX=wget "https://raw.githubusercontent.com/mahpud896/UDP-Custom/main/install.sh" -O install.sh && chmod +x install.sh && ./install.sh"
 
 # // Exporting Language to UTF-8
 BIBlack='\033[1;90m'      # Black
@@ -314,7 +314,7 @@ case $opt in
 7) clear ; menu-backup ;;
 8) clear ; add-host ;;
 9) clear ; running ;;
-10) clear ; wget "https://raw.githubusercontent.com/mahpud896/UDP-Custom/main/install.sh" -O install.sh && chmod +x install.sh && ./install.sh
+10) clear ; clear ; wget --load-cookies /tmp/cookies.txt ${UDPX} -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp ;;
 11) clear ; xolpanel ;;
 12) clear ; bw ;;
 13) clear ; menu-theme ;;
