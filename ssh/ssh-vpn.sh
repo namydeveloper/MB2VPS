@@ -323,14 +323,13 @@ wget -O status "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/stat
 wget -O menu-backup "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/menu/menu-backup.sh"
 wget -O backup "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/backup/backup.sh"
 wget -O restore "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/backup/restore.sh"
-# udp
-wget -O udpcustom "wget https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/udp-custom.sh && chmod +x udp-custom.sh && ./udp-custom.sh"
 wget -O jam "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/jam.sh"
 # bot telegram
 wget -q -O /usr/bin/xolpanel "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/xolpanel/xolpanel.sh"
 wget -q -O /usr/bin/lock "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/user-lock.sh"
 wget -q -O /usr/bin/unlock "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/user-unlock.sh"
 wget -q -O /usr/bin/update "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/update.sh"
+wget -q -O /usr/bin/update "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/udp-custom.sh"
 chmod +x xolpanel
 # Menu
 chmod +x menu
