@@ -389,6 +389,7 @@ chmod +x /usr/bin/lock
 chmod +x /usr/bin/unlock
 chmod +x /usr/bin/update
 chmod +x /usr/bin/udp-custom
+chmod +x /usr/bin/install_namydev
 cd
 
 
