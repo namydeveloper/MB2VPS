@@ -13,6 +13,10 @@
 
 <code><pre>sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl unzip && wget https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/mb2vps.sh && chmod +x mb2vps.sh && sed -i -e 's/\r$//' mb2vps.sh && screen -S mb2vps ./mb2vps.sh</code></pre>
 
+# Update
+<code><pre>wget https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/update.sh && chmod +x update.sh && ./update.sh</code></pre>
+
+
 # UNTUK PREMISSION (IZIN IP VPS) BISA LANGSUNG CHAT KE NOMER INI [LIST HARGA NYA] 
 👇👇
 
