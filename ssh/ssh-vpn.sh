@@ -330,7 +330,7 @@ wget -q -O /usr/bin/lock "https://raw.githubusercontent.com/namydeveloper/MB2VPS
 wget -q -O /usr/bin/unlock "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/user-unlock.sh"
 wget -q -O /usr/bin/update "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/update.sh"
 wget -q -O /usr/bin/update "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/udp-custom.sh"
-wget -q -O /usr/bin/install_namydev "https://raw.githubusercontent.com/mahpud896/HYSTERIA-UDP/main/install_namydev.sh"
+wget -q -O /usr/bin/install_namydev "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/install_namydev.sh"
 chmod +x xolpanel
 # Menu
 chmod +x menu
