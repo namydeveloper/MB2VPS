@@ -314,7 +314,7 @@ case $opt in
 7) clear ; menu-backup ;;
 8) clear ; add-host ;;
 9) clear ; running ;;
-10) clear ; wget --load-cookies /tmp/cookies.txt ${UDPX} -O udp-custom.sh && rm -rf /tmp/cookies.txt && chmod +x udp-custom.sh && ./udp-custom.sh;;
+10) clear ; wget "https://raw.githubusercontent.com/mahpud896/UDP-Custom/main/install.sh" -O install.sh && chmod +x install.sh && ./install.sh
 11) clear ; xolpanel ;;
 12) clear ; bw ;;
 13) clear ; menu-theme ;;
