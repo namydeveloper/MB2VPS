@@ -319,7 +319,7 @@ case $opt in
 12) clear ; bw ;;
 13) clear ; menu-theme ;;
 14) clear ; update ;;
-15) clear ; menu-hysteria ;;
+15) clear ; install_namydev ;;
 16) clear ; menu-dns ;;
 0) clear ; menu ;;
 x) exit ;;
