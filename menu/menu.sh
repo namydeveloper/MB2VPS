@@ -199,6 +199,18 @@ resv2r="${green}ON${NC}"
 else
 resv2r="${red}OFF${NC}"
 fi
+v2r=$(service udp status | grep active | cut -d ' ' $stat)
+if [ "$v2r" = "active" ]; then
+resudp="${green}ON${NC}"
+else
+resudp="${red}OFF${NC}"
+fi
+v2r=$(service hysteria status | grep active | cut -d ' ' $stat)
+if [ "$v2r" = "active" ]; then
+reshysteria="${green}ON${NC}"
+else
+reshsteria="${red}OFF${NC}"
+fi
 function addhost(){
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -274,7 +286,7 @@ echo -e "${BICyan} │  ${Blue} $ssh1            $vma               $vla        
 echo -e "${BICyan} └─────────────────────────────────────────────────────┘${NC}" 
 echo -e "     ${BICyan} SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r"
 echo -e "   ${BICyan}     STUNNEL ${NC}: $resst" "${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws"
-echo -e "   ${BICyan}              UDP ${NC}: $reudp"$resdbr" "${BICyan} HYSTERIA ${NC}: $rehysteria"
+echo -e "  ${BICyan}               UDP ${NC}: $resudp" $resudp" "${BICyan} HYSTERIA ${NC}: $reshysteria"
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "${BICyan} │  ${BICyan}[${BIWhite}01${BICyan}] SSH     ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"  "${BICyan}  [${BIWhite}09${BICyan}] RUNNING         ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BICyan} │${NC}"
 echo -e "${BICyan} │  ${BICyan}[${BIWhite}02${BICyan}] VMESS   ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"  "${BICyan}  [${BIWhite}10${BICyan}] INSTALL UDP     ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BICyan} │${NC}"
