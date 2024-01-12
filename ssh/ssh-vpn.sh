@@ -388,6 +388,7 @@ chmod +x /usr/bin/xolpanel
 chmod +x /usr/bin/lock
 chmod +x /usr/bin/unlock
 chmod +x /usr/bin/update
+chmod +x /usr/bin/udpcustom
 cd
 
 
