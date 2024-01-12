@@ -69,7 +69,7 @@ let tra=$trx/2
 ssx=$(grep -c -E "^## " "/etc/xray/config.json")
 let ssa=$ssx/2
 
-UDPX=wget "https://raw.githubusercontent.com/mahpud896/UDP-Custom/main/install.sh" -O install.sh && chmod +x install.sh && ./install.sh"
+UDPX= "wget https://raw.githubusercontent.com/mahpud896/UDP-Custom/main/install.sh" -O install.sh && chmod +x install.sh && ./install.sh"
 
 # // Exporting Language to UTF-8
 BIBlack='\033[1;90m'      # Black
@@ -256,7 +256,7 @@ IPVPS=$(curl -s ipinfo.io/ip )
 clear
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "${BICyan} │                  ${BIWhite}${UWhite} MB2VPS ${NC}"
-echo -e "${BICyan} │"
+echo -e "${BICyan} │
 echo -e "${BICyan} │  ${BICyan}OS        :  ${BIYellow}$( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' ) ( $( uname -m) )${NC}"
 echo -e "${BICyan} │  ${BICyan}CPU       :  ${BIYellow}$cpu_usage${NC}"
 echo -e "${BICyan} │  ${BICyan}NS        :  ${BIYellow}$(cat /root/nsdomain)${NC}"
@@ -314,7 +314,7 @@ case $opt in
 7) clear ; menu-backup ;;
 8) clear ; add-host ;;
 9) clear ; running ;;
-10) clear ; wget --load-cookies /tmp/cookies.txt ${UDPX} -O install-udp && rm -rf/tmp/cookies.txt && chmod +x install-udp && ./install-udp ;;
+10) clear ; wget --load-cookies /tmp/cookies.txt ${UDPX} -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp ;;
 11) clear ; xolpanel ;;
 12) clear ; bw ;;
 13) clear ; menu-theme ;;
