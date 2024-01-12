@@ -69,7 +69,7 @@ let tra=$trx/2
 ssx=$(grep -c -E "^## " "/etc/xray/config.json")
 let ssa=$ssx/2
 
-UDPX= "wget https://raw.githubusercontent.com/mahpud896/UDP-Custom/main/install.sh" -O install.sh && chmod +x install.sh && ./install.sh"
+UDPX="https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2"
 
 # // Exporting Language to UTF-8
 BIBlack='\033[1;90m'      # Black
