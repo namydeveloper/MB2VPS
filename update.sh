@@ -120,7 +120,7 @@ wget -q -O /usr/bin/add-host "https://raw.githubusercontent.com/namydeveloper/MB
 wget -q -O /usr/bin/certv2ray "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/xray/certv2ray.sh"
 wget -q -O /usr/bin/menu-set "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/menu/menu-set.sh"
 wget -q -O /usr/bin/about "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/menu/about.sh"
-#wget -q -O /usr/bin/add4 "https://raw.githubusercontent.com/namydeveloper/permission/main/add4.sh"
+wget -q -O /usr/bin/add4 "https://raw.githubusercontent.com/namydeveloper/permission/main/add4.sh"
 wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/menu/menu-backup.sh"
 wget -q -O /usr/bin/trial "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/ssh/trial.sh"
 wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/ssh/usernew.sh"
