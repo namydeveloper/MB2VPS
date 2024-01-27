@@ -43,11 +43,11 @@ logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
 cd /usr/bin
-wget -O autobackup "https://raw.githubusercontent.com/namydeveloper/v5/main/backup/autobackup.sh"
-wget -O backup "https://raw.githubusercontent.com/namydeveloper/v5/main/backup/backup.sh"
-wget -O restore "https://raw.githubusercontent.com/namydeveloper/v5/main/backup/restore.sh"
-wget -O strt "https://raw.githubusercontent.com/namydeveloper/v5/main/backup/strt.sh"
-wget -O limitspeed "https://raw.githubusercontent.com/namydeveloper/v5/main/backup/limitspeed.sh"
+wget -O autobackup "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/backup/autobackup.sh"
+wget -O backup "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/backup/backup.sh"
+wget -O restore "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/backup/restore.sh"
+wget -O strt "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/backup/strt.sh"
+wget -O limitspeed "https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/backup/limitspeed.sh"
 chmod +x autobackup
 chmod +x backup
 chmod +x restore
