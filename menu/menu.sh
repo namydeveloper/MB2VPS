@@ -69,7 +69,6 @@ let tra=$trx/2
 ssx=$(grep -c -E "^## " "/etc/xray/config.json")
 let ssa=$ssx/2
 
-UDPX= wget "https://raw.githubusercontent.com/namydeveloper/UDP-Custom/main/install.sh" -O install.sh && chmod +x install.sh && ./install.sh
 # // Exporting Language to UTF-8
 BIBlack='\033[1;90m'      # Black
 BIRed='\033[1;91m'        # Red
