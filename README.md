@@ -5,11 +5,12 @@
 # command install
 # COPAS AJA BAWA INI👇👇👇
 
-# langkah awal
+# UP REPO UBUNTU
+<pre><code>apt update -y && apt upgrade -y && apt dist-upgrade -y && reboot</code></pre>
+# UP REPO DEBIAN
+<pre><code>apt update && apt upgrade -y && update-grub && sleep 2 && reboot</code></pre>
 
-<code><pre>apt update && apt upgrade -y</code></pre>
-
-# langkah kedua
+# Install Script
 
 <code><pre>sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl unzip && wget https://raw.githubusercontent.com/namydeveloper/MB2VPS/main/mb2vps.sh && chmod +x mb2vps.sh && sed -i -e 's/\r$//' mb2vps.sh && screen -S mb2vps ./mb2vps.sh</code></pre>
 
