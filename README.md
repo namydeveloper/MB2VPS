@@ -3,7 +3,7 @@
 # support debian 10 & 11
 # support ubuntu 20 & 18
 # command install
-# COPAS AJA BAWA INI👇👇👇
+# COPAS AJA BAWAH INI👇👇👇
 
 # UP REPO UBUNTU
 <pre><code>apt update -y && apt upgrade -y && apt dist-upgrade -y && reboot</code></pre>
